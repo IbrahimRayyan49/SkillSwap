@@ -21,7 +21,12 @@ app.get('/',(req,res)=>{
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const matchRoutes = require('./routes/matchRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
+
+app.use('/api/reviews', reviewRoutes);
+app.use('/api/matches', matchRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
